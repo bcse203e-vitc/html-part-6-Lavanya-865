@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Q19</title>
+    <script>
+        function l() {
+            let s = prompt("Enter a sentence:").split(" "), m = "";
+            for (let w of s) if (w.length > m.length) m = w;
+            document.getElementById("o").innerText = `Longest word: ${m}`;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="l()">Find Longest Word</button>
+    <p id="o"></p>
+</body>
+</html>
