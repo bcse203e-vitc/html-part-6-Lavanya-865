@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Q3</title>
+    <script>
+        function evenOdd(){
+            const arr=[];
+            const odd=[];
+            const even=[];
+            for(let i=1;i<6;i++){
+                arr[i]=prompt("Enter number ("+i+")");
+            }
+            let o=0;
+            let e=0;
+            for(let i=1;i<6;i++){
+                if(arr[i]%2!=0){
+                    odd[o++]=arr[i];
+                }
+                else{
+                    even[e++]=arr[i];
+                }
+            }
+            document.getElementById("odd").innerHTML ="odd: "+ odd.toString();
+            document.getElementById("even").innerHTML = "even: "+even.toString();
+            
+        }
+    </script>
+</head>
+<body>
+    <button onclick=evenOdd()>Start Program</button>
+    <p id="odd"></p>
+    <p id="even"></p>
+</body>
+</html>
