@@ -7,25 +7,16 @@
     <script>
         function reverseAndCheckPalindrome() {
             let a = prompt("Enter the number:");
-            
             let num = parseInt(a);
-            
-            if (isNaN(num)) {
-                document.getElementById("result").innerHTML = "Please enter a valid number.";
-                return;
-            }
-
-            let originalNum = num;
-            let reversedNum = 0;
-
+            let n = num;
+            let rn = 0;
             while (num > 0) {
                 let digit = num % 10; 
-                reversedNum = reversedNum * 10 + digit;
+                rn = rn * 10 + digit;
                 num = Math.floor(num / 10); 
             }
-            let isPalindrome = (originalNum == reversedNum) ? "Yes, it's a palindrome!" : "No, it's not a palindrome.";
-
-            document.getElementById("result").innerHTML = `Reversed Number: ${reversedNum} <br> ${isPalindrome}`;
+            let isPalindrome = (n == rn) ? "Palindrome!" : "Not a palindrome!";
+            document.getElementById("result").innerHTML = `Reversed Number: ${rn} <br> ${isPalindrome}`;
         }
     </script>
 </head>
