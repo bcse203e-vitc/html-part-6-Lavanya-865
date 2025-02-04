@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <script>
+        function convertTemperature() {
+            let c = prompt("Enter 1 to convert Celsius to Fahrenheit, 2 for Fahrenheit to Celsius:");
+            if (c === "1") {
+                let cels = parseFloat(prompt("Enter temperature in Celsius:"));
+                let f = (cels * 9 / 5) + 32;
+                document.getElementById("result").innerHTML = `${cels}°C is ${f.toFixed(2)}°F`;
+            } 
+            else if (c === "2") {
+                let f = parseFloat(prompt("Enter temperature in Fahrenheit:"));
+                let cels = (f - 32) * 5 / 9;
+                document.getElementById("result").innerHTML = `${f}°F is ${cels.toFixed(2)}°C`;
+            } 
+            else {
+                alert("Invalid choice!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Temperature Converter</h2>
+    <button onclick="convertTemperature()">Convert Temperature</button>
+    <p id="result"></p>
+</body>
+</html>
