@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Q11</title>
+    <script>
+        function v() {
+            let s = prompt("Enter a string:").toLowerCase(), v = "aeiou", vc = 0, c = 0, l = [];
+            for (let i of s) v.includes(i) ? (vc++, l.push(i)) : i.match(/[a-z]/) && c++;
+            document.getElementById("o").innerText = `Vowels: ${vc} (${l.join(", ")})\nConsonants: ${c}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>JS Q11</h2>
+    <button onclick="v()">Count Vowels & Consonants</button>
+    <p id="o"></p>
+</body>
+</html>
