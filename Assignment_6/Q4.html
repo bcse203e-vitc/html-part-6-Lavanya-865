@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Q4</title>
+    <script>
+        function reverse(){
+            a=prompt("Enter the number");
+            let i=a;
+            let n=0;
+            while(i!=0){
+                i=i%10;
+                n=n*10+i;
+            }
+            document.getElementById("new").innerHTML=n;
+        }
+    </script>
+</head>
+<body>
+    <button onclick=reverse()>Start Program</button>
+    <p id="new"></p>
+</body>
+</html>
