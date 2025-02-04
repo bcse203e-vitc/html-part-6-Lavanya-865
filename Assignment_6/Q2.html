@@ -3,30 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Q2</title>
+    <title>Find Largest Number</title>
     <script>
-        function findLargest(){
-            let a=prompt("enter the 1st number: ");
-            let b=prompt("enter the 2nd number: ");
-            let c=prompt("enter the 3rd number: ");
-            let d;
-            if(a>b && a>c){
-                d=a;
+        function findLargest(isN) {
+            let numbers = isN ? prompt("Enter numbers separated by spaces:").split(" ") 
+                              : [prompt("Enter first number:"), prompt("Enter second number:"), prompt("Enter third number:")];
+
+            let largest = -Infinity;
+            for (let num of numbers) {
+                let val = parseFloat(num);
+                if (!isNaN(val) && val > largest) largest = val;
             }
-            else if(b>a && b>c){
-                d=b;
-            }
-            else{
-                d=c;
-            }
-            document.getElementById("h").innerHTML="Largest Number";
-            document.getElementById("l").innerHTML=d;
+
+            document.getElementById("result").innerText = largest === -Infinity ? "Invalid input!" : "Largest number: " + largest;
         }
     </script>
 </head>
 <body>
-    <button onclick=findLargest()>Start Program</button>
-    <p id="h"></p>
-    <p id="l"></p>
+    <h2>Find the Largest Number</h2>
+    <button onclick="findLargest(false)">Find from 3 Numbers</button>
+    <button onclick="findLargest(true)">Find from N Numbers</button>
+    <p id="result"></p>
 </body>
 </html>
