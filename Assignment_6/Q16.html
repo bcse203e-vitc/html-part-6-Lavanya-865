@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Q16</title>
+    <script>
+        function s(o) {
+            let a = prompt("Enter numbers separated by spaces:").split(" ").map(Number);
+            for (let i = 0; i < a.length; i++)
+                for (let j = i + 1; j < a.length; j++)
+                    if ((o && a[i] < a[j]) || (!o && a[i] > a[j]))
+                        [a[i], a[j]] = [a[j], a[i]];
+            document.getElementById("o").innerText = `Sorted: ${a.join(", ")}`;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="s(0)">Sort Ascending</button>
+    <button onclick="s(1)">Sort Descending</button>
+    <p id="o"></p>
+</body>
+</html>
