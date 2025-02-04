@@ -8,10 +8,8 @@
         function reverseAndCheckPalindrome() {
             let a = prompt("Enter the number:");
             
-            // Convert input to a number
             let num = parseInt(a);
             
-            // Check if the input is a valid number
             if (isNaN(num)) {
                 document.getElementById("result").innerHTML = "Please enter a valid number.";
                 return;
@@ -21,12 +19,10 @@
             let reversedNum = 0;
 
             while (num > 0) {
-                let digit = num % 10;  // Extract last digit
-                reversedNum = reversedNum * 10 + digit; // Build reversed number
-                num = Math.floor(num / 10);  // Remove last digit
+                let digit = num % 10; 
+                reversedNum = reversedNum * 10 + digit;
+                num = Math.floor(num / 10); 
             }
-
-            // Check for palindrome
             let isPalindrome = (originalNum == reversedNum) ? "Yes, it's a palindrome!" : "No, it's not a palindrome.";
 
             document.getElementById("result").innerHTML = `Reversed Number: ${reversedNum} <br> ${isPalindrome}`;
