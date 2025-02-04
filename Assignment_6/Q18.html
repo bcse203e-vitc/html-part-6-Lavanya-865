@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Q18</title>
+    <script>
+        function f() {
+            let s = prompt("Enter a string:"), c = {};
+            for (let i of s) c[i] = (c[i] || 0) + 1;
+            for (let i of s) if (c[i] === 1) {
+                document.getElementById("o").innerText = `First non-repeating: ${i}`;
+                return;
+            }
+            document.getElementById("o").innerText = "No unique character found.";
+        }
+    </script>
+</head>
+<body>
+    <button onclick="f()">Find First Non-Repeating</button>
+    <p id="o"></p>
+</body>
+</html>
