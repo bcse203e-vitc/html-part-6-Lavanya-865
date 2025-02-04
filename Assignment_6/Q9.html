@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Q9</title>
+    <script>
+        function g(a, b) { return b ? g(b, a % b) : a; }
+        function l() {
+            let a = parseInt(prompt("Enter first number:"));
+            let b = parseInt(prompt("Enter second number:"));
+            document.getElementById("o").innerText = isNaN(a) || isNaN(b) || a <= 0 || b <= 0 ? "Invalid input!" : `LCM: ${Math.abs(a * b) / g(a, b)}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>JS Q9</h2>
+    <button onclick="l()">Find LCM</button>
+    <p id="o"></p>
+</body>
+</html>
