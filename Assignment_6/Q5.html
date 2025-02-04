@@ -11,12 +11,11 @@
     <input type="number" id="number" placeholder="Enter an integer">
     <button onclick="countDigits()">Count Digits</button>
     <p id="result"></p>
-
     <script>
         function countDigits() {
             let num = document.getElementById("number").value;
             if (num === "") {
-                document.getElementById("result").innerText = "Please enter a number.";
+                document.getElementById("result").innerText = "Enter a number.";
                 return;
             }
             let digitCount = Math.abs(num).toString().length;
