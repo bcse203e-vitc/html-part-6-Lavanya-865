@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function b(d) {
+            let n = prompt(`Enter a ${d ? "binary" : "decimal"} number:`), r;
+            if (d) r = parseInt(n, 2);
+            else r = (+n).toString(2);
+            document.getElementById("o").innerText = isNaN(r) ? "Invalid input!" : `Result: ${r}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>JS Q17</h2>
+    <button onclick="b(0)">Decimal to Binary</button>
+    <button onclick="b(1)">Binary to Decimal</button>
+    <p id="o"></p>
+</body>
+</html>
