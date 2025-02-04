@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Q10</title>
+    <script>
+        function a() {
+            let n = prompt("Enter a number:");
+            let s = 0, d = n.length;
+            for (let i of n) s += Math.pow(i, d);
+            document.getElementById("o").innerText = s == n ? "Armstrong ✅" : "Not Armstrong ❌";
+        }
+    </script>
+</head>
+<body>
+    <button onclick="a()">Check Armstrong</button>
+    <p id="o"></p>
+</body>
+</html>
