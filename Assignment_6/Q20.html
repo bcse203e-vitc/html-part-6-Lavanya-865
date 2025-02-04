@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Q20</title>
+    <script>
+        function c() {
+            let s = prompt("Enter a string:"), f = {};
+            for (let i of s) f[i] = (f[i] || 0) + 1;
+            document.getElementById("o").innerText = JSON.stringify(f);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="c()">Count Characters</button>
+    <p id="o"></p>
+</body>
+</html>
