@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Q14</title>
+    <script>
+        function p() {
+            let s = prompt("Enter a sentence:").toLowerCase().replace(/[^a-z]/g, "");
+            let c = new Set(s);
+            document.getElementById("o").innerText = c.size === 26 ? "✅ It is a pangram." : "❌ Not a pangram.";
+        }
+    </script>
+</head>
+<body>
+    <button onclick="p()">Check Pangram</button>
+    <p id="o"></p>
+</body>
+</html>
