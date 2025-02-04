@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series</title>
+    <script>
+        function f(n) {
+            let a = 0, b = 1, s = [a, b];
+            for (let i = 2; i < n; i++) s.push(s[i - 1] + s[i - 2]);
+            return s.slice(0, n).join(", ");
+        }
+        function r(n) {
+            if (n <= 1) return n;
+            return r(n - 1) + r(n - 2);
+        }
+        function g() {
+            let n = parseInt(prompt("Enter N:"));
+            if (isNaN(n) || n <= 0) {
+                document.getElementById("o").innerText = "Invalid input!";
+                return;
+            }
+            let s = [];
+            for (let i = 0; i < n; i++) s.push(r(i));
+            document.getElementById("o").innerText = `Fibonacci: ${s.join(", ")}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Fibonacci Series</h2>
+    <button onclick="document.getElementById('o').innerText = `Fibonacci: ${f(parseInt(prompt('Enter N:')))}`">Iterative</button>
+    <button onclick="g()">Recursive</button>
+    <p id="o"></p>
+</body>
+</html>
