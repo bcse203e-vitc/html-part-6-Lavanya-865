@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Q13</title>
+    <script>
+        function f() {
+            let a = prompt("Enter numbers separated by spaces:").split(" ").map(Number).sort((x, y) => x - y);
+            let u = [...new Set(a)];
+            document.getElementById("o").innerText = u.length < 2 ? "Not enough unique numbers!" : `Second Smallest: ${u[1]}\nSecond Largest: ${u[u.length - 2]}`;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="f()">Find Second Smallest & Largest</button>
+    <p id="o"></p>
+</body>
+</html>
