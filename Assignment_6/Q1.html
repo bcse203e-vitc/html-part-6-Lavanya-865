@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Q1</title>
+    <title>Swap Two Numbers</title>
     <script>
-        function swap(){
-            let a,b;
-            a=1;
-            b=2;
-            a=a+b;
-            b=a-b;
-            a=a-b;
-            document.getElementById("a").innerHTML=a;
-            document.getElementById("b").innerHTML=b;
+        function swap() {
+            let a = parseFloat(prompt("Enter A:"));
+            let b = parseFloat(prompt("Enter B:"));
+            a = a + b;
+            b = a - b;
+            a = a - b;
+            document.getElementById("result").innerHTML = `Swapped values: A = ${a}, B = ${b}`;
         }
     </script>
 </head>
 <body>
-    <p id="a">1</p>
-    <p id="b">2</p>
-    <button onclick=swap()>swap</button>
+    <h2>Swap Two Numbers</h2>
+    <button onclick="swap()">Swap</button>
+    <p id="result"></p>
 </body>
 </html>
