@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Q2</title>
+    <script>
+        function findLargest(){
+            let a=prompt("enter the 1st number: ");
+            let b=prompt("enter the 2nd number: ");
+            let c=prompt("enter the 3rd number: ");
+            let d;
+            if(a>b && a>c){
+                d=a;
+            }
+            else if(b>a && b>c){
+                d=b;
+            }
+            else{
+                d=c;
+            }
+            document.getElementById("h").innerHTML="Largest Number";
+            document.getElementById("l").innerHTML=d;
+        }
+    </script>
+</head>
+<body>
+    <button onclick=findLargest()>Start Program</button>
+    <p id="h"></p>
+    <p id="l"></p>
+</body>
+</html>
