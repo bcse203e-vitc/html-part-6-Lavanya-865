@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8</title>
+    <script>
+        function g(a, b) {
+            while (b) [a, b] = [b, a % b];
+            return a;
+        }
+        function r(a, b) {
+            return b ? r(b, a % b) : a;
+        }
+        function f(m) {
+            let a = parseInt(prompt("Enter first number:"));
+            let b = parseInt(prompt("Enter second number:"));
+            if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) {
+                document.getElementById("o").innerText = "Invalid input!";
+                return;
+            }
+            document.getElementById("o").innerText = `GCD: ${m ? r(a, b) : g(a, b)}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Find GCD</h2>
+    <button onclick="f(0)">Iterative</button>
+    <button onclick="f(1)">Recursive</button>
+    <p id="o"></p>
+</body>
+</html>
