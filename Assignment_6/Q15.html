@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Q15</title>
+    <script>
+        function missing() {
+            let a = prompt("Enter numbers:").split(" "), s = 0, n = 0;
+            for (let i of a) {
+                let v = parseInt(i);
+                if (!isNaN(v)) {
+                    s += v;
+                    if (v > n) n = v;
+                }
+            }
+            let e = (n * (n + 1)) / 2;
+            document.getElementById("o").innerText = e - s || "No missing number.";
+        }
+    </script>
+</head>
+<body>
+    <button onclick="missing()">Find Missing Number</button>
+    <p id="o"></p>
+</body>
+</html>
