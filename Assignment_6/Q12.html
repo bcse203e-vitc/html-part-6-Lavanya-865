@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Q12</title>
+    <script>
+        function d() {
+            let a = prompt("Enter numbers separated by spaces:").split(" "), r = [];
+            for (let i of a) if (!r.includes(i)) r.push(i);
+            document.getElementById("o").innerText = `Unique: ${r.join(", ")}`;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="d()">Remove Duplicates</button>
+    <p id="o"></p>
+</body>
+</html>
