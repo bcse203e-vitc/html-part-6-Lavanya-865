@@ -3,22 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Q4</title>
+    <title>Reverse Number & Palindrome Check</title>
     <script>
-        function reverse(){
-            a=prompt("Enter the number");
-            let i=a;
-            let n=0;
-            while(i!=0){
-                i=i%10;
-                n=n*10+i;
+        function reverseAndCheckPalindrome() {
+            let a = prompt("Enter the number:");
+            
+            // Convert input to a number
+            let num = parseInt(a);
+            
+            // Check if the input is a valid number
+            if (isNaN(num)) {
+                document.getElementById("result").innerHTML = "Please enter a valid number.";
+                return;
             }
-            document.getElementById("new").innerHTML=n;
+
+            let originalNum = num;
+            let reversedNum = 0;
+
+            while (num > 0) {
+                let digit = num % 10;  // Extract last digit
+                reversedNum = reversedNum * 10 + digit; // Build reversed number
+                num = Math.floor(num / 10);  // Remove last digit
+            }
+
+            // Check for palindrome
+            let isPalindrome = (originalNum == reversedNum) ? "Yes, it's a palindrome!" : "No, it's not a palindrome.";
+
+            document.getElementById("result").innerHTML = `Reversed Number: ${reversedNum} <br> ${isPalindrome}`;
         }
     </script>
 </head>
 <body>
-    <button onclick=reverse()>Start Program</button>
-    <p id="new"></p>
+    <button onclick="reverseAndCheckPalindrome()">Start Program</button>
+    <p id="result"></p>
 </body>
 </html>
